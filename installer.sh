@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR=pwd
-if [ $2 = "uninstall" ]; then
+if [ $2 eq "uninstall" ]; then
     echo ""
     echo "Performing uninstall"
     echo ""    
@@ -11,7 +11,7 @@ if [ $2 = "uninstall" ]; then
     echo "Uninstall complete!"
     exit 0
 fi
-if [ $2 = "clean" ]; then
+if [ $2 eq "clean" ]; then
     echo ""
     echo "Performing clean install"
     echo ""    
