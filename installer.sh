@@ -43,6 +43,7 @@ ln -s /etc/apache2/sites-available/007-GumCP.conf /etc/apache2/sites-enabled/007
 echo ""
 echo "Setting Password for GumCP (you have to write)"
 echo ""
+mkdir -p /usr/local/apache/passwd/
 sudo htpasswd -c /usr/local/apache/passwd/passwords gumcp
 echo ""
 echo "Restart apache service"
