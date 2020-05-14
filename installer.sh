@@ -37,6 +37,12 @@ echo ""
 cd /var/www/html
 sudo git clone https://github.com/crossplatformdev/GumCP.git
 sudo chmod 775 -R /var/www/html
+sudo cp /var/www/html/GumCP/007-GumCP.conf /etc/apache2/sites-available/
+ln -s /etc/apache2/sites-available/007-GumCP.conf /etc/apache2/sites-enabled/007-GumCP.conf 
+echo ""
+echo "Setting Password for GumCP (you have to write)"
+echo ""
+htpasswd -c /usr/local/apache/passwd/passwords gumcp
 echo ""
 echo "Restart apache service"
 echo ""
