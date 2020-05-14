@@ -71,7 +71,7 @@ echo ""
 echo "Restart apache service"
 echo ""
 sudo service apache2 restart
-sudo rm -f /var/www/html/GumCP/installer.sh
+sudo rm -f /var/www/GumCP/installer.sh
 sudo chmod 777 /var/www/GumCP/include/config.php
 echo ""
 echo "Done"
