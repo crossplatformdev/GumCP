@@ -1,4 +1,25 @@
 #!/bin/bash
+DIR=pwd
+if [ $2 = "uninstall" ]; then
+    echo ""
+    echo "Performing uninstall"
+    echo ""    
+    apt purge git apache2 mod-php php-sqlite3 php-ssh2 php libapache2-mod-php
+    rm -fr /usr/share/GumCP
+    rm /var/www/passwords
+    rm /etc/apache2/sites-enabled/007-GumCP.conf
+    echo "Uninstall complete!"
+    exit 0
+fi
+if [ $2 = "clean" ]; then
+    echo ""
+    echo "Performing clean install"
+    echo ""    
+    apt purge git apache2 mod-php php-sqlite3 php-ssh2 php libapache2-mod-php
+    rm -fr /usr/share/GumCP   
+    rm /var/www/passwords
+    rm /etc/apache2/sites-enabled/007-GumCP.conf
+fi
 echo ""
 echo "GumCP installer"
 echo ""
@@ -26,25 +47,26 @@ sudo apt-get install php-ssh2
 echo ""
 echo "Install wiringPI"
 echo ""
-cd
+cd /tmp
 sudo git clone https://github.com/WiringPi/WiringPi.git
 cd WiringPi
 sudo git pull origin
 ./build
+cd ..
+rm -fr /tmp/WiringPi
 echo ""
 echo "Install GumCP"
 echo ""
-cd /tmp
 sudo git clone https://github.com/crossplatformdev/GumCP.git
 sudo cp -r /tmp/GumCP /usr/share/
 rm /tmp/GumCP
 sudo cp /usr/share/GumCP/007-GumCP.conf /etc/apache2/sites-available/007-GumCP.conf
 ln -s /etc/apache2/sites-available/007-GumCP.conf /etc/apache2/sites-enabled/007-GumCP.conf 
+ln -s /usr/share/GumCP/ /var/www/GumCP/
 echo ""
 echo "Setting Password for GumCP (you have to write)"
 echo ""
-mkdir -p /usr/local/apache/passwd/
-sudo htpasswd -c /usr/local/apache/passwd/passwords gumcp
+sudo htpasswd -c /var/www/passwords gumcp
 echo ""
 echo "Restart apache service"
 echo ""
@@ -62,3 +84,4 @@ echo "http://${IP}/GumCP/"
 echo ""
 echo "If you cant access it, then something went wrong, you can open an issue at github: https://github.com/crossplatformdev/GumCP/issues"
 echo ""
+cd $DIR
