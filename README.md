@@ -40,7 +40,7 @@ cd && sudo apt-get update && sudo apt-get install wget -y
 ```
 3. run this command:
 ```
-sudo wget https://raw.githubusercontent.com/gumslone/GumCP/master/installer.sh && sudo sh ./installer.sh
+sudo wget https://raw.githubusercontent.com/crossplatformdev/GumCP/master/installer.sh && sudo sh ./installer.sh
 ```
 This should install everything.
 
