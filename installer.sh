@@ -34,8 +34,10 @@ sudo git pull origin
 echo ""
 echo "Install GumCP"
 echo ""
-cd /usr/share
+cd /tmp
 sudo git clone https://github.com/crossplatformdev/GumCP.git
+sudo cp -r /tmp/GumCP /usr/share/
+rm /tmp/GumCP
 sudo cp /usr/share/GumCP/007-GumCP.conf /etc/apache2/sites-available/007-GumCP.conf
 ln -s /etc/apache2/sites-available/007-GumCP.conf /etc/apache2/sites-enabled/007-GumCP.conf 
 echo ""
