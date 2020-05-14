@@ -35,7 +35,7 @@ echo ""
 echo "Install GumCP"
 echo ""
 cd /var/www/html
-sudo git clone https://github.com/gumslone/GumCP.git
+sudo git clone https://github.com/crossplatformdev/GumCP.git
 sudo chmod 775 -R /var/www/html
 echo ""
 echo "Restart apache service"
