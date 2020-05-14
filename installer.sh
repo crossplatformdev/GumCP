@@ -34,10 +34,9 @@ sudo git pull origin
 echo ""
 echo "Install GumCP"
 echo ""
-cd /var/www/html
+cd /usr/share
 sudo git clone https://github.com/crossplatformdev/GumCP.git
-sudo chmod 775 -R /var/www/html
-sudo cp /var/www/html/GumCP/007-GumCP.conf /etc/apache2/sites-available/
+sudo cp /usr/share/GumCP/007-GumCP.conf /etc/apache2/sites-available/007-GumCP.conf
 ln -s /etc/apache2/sites-available/007-GumCP.conf /etc/apache2/sites-enabled/007-GumCP.conf 
 echo ""
 echo "Setting Password for GumCP (you have to write)"
@@ -58,5 +57,5 @@ echo ""
 IP="$(hostname -I | cut -d' ' -f1)"
 echo "http://${IP}/GumCP/"
 echo ""
-echo "If you cant access it, then something went wrong, you can open an issue at github: https://github.com/gumslone/GumCP/issues"
+echo "If you cant access it, then something went wrong, you can open an issue at github: https://github.com/crossplatformdev/GumCP/issues"
 echo ""
