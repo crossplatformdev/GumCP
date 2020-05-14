@@ -28,7 +28,7 @@ echo "Install wiringPI"
 echo ""
 cd
 sudo git clone https://github.com/WiringPi/WiringPi.git
-cd wiringPi
+cd WiringPi
 sudo git pull origin
 ./build
 echo ""
