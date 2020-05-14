@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR=pwd
+DIR=`pwd`
 if [ $1 = "uninstall" ]; then
     echo ""
     echo "Performing uninstall"
@@ -80,7 +80,7 @@ echo ""
 echo "GumCP should be installed at:"
 echo ""
 IP="$(hostname -I | cut -d' ' -f1)"
-echo "http://${IP}/GumCP/"
+echo "http://${IP}:7000/GumCP/"
 echo ""
 echo "If you cant access it, then something went wrong, you can open an issue at github: https://github.com/crossplatformdev/GumCP/issues"
 echo ""
