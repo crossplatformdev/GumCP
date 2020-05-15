@@ -2,16 +2,16 @@
 	
 //make sure that php ssh in installed (sudo apt-get install php5-ssh2)
 define('SSH_PORT', '22'); //your ssh port, defailt is "22"
-define('SSH_USER', 'pi'); //your ssh username, default is "pi"
+define('SSH_USER', 'ubuntu'); //your ssh username, default is "ubuntu"
 define('SSH_PASS', 'raspberry'); //your ssh password, default is "raspberry"
 
-define('LOGIN_REQUIRED', false); //set to "true" if you want to enable a login system, or "false" to disable it
-define('LOGIN_USER', 'pi'); //set username for login
+define('LOGIN_REQUIRED', true); //set to "true" if you want to enable a login system, or "false" to disable it
+define('LOGIN_USER', 'gumcp'); //set username for login
 define('LOGIN_PASS', 'raspberry'); //set password for login
 
 define('GUMCP_DEBUG', false); //change to true to show PHP errors, or false to hide errors
 
-define('MEMORY_CALCULATION_METHOD', 2); //change to 1 to use the free -mo command, which may not work with all raspberrys
+define('MEMORY_CALCULATION_METHOD', 1); //change to 1 to use the free -mo command, which may not work with all raspberrys
 
 
 
